@@ -83,11 +83,12 @@
 
         // Categorías de eventos
         const categories = {
-            viajes: { name: 'Viajes', color: 'bg-blue-500', dot: '#3b82f6' },
-            fujem: { name: 'Fujem', color: 'bg-green-500', dot: '#22c55e' },
+            viajes: { name: 'Viajes', color: 'bg-orange-500', dot: '#ffb836' },
+            fujem: { name: 'Fujem', color: 'bg-blue-500', dot: '#3b82f6' },
             comedia: { name: 'Comedia', color: 'bg-yellow-500', dot: '#eab308' },
             ocio: { name: 'Ocio', color: 'bg-purple-500', dot: '#a855f7' },
-			cumpleanos: { name: 'Cumpleaños', color: 'bg-pink-500', dot: '#ec4899' }
+			comunio: { name: 'Comunio', color: 'bg-green-500', dot: '#22c55e' },
+			cumpleanos: { name: 'Cumpleaños', color: 'bg-amber-800', dot: '#966814' }
         };
 
         // Estado de la aplicación
@@ -592,10 +593,13 @@
                                     <div>
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Categoría *</label>
                                         <select id="eventCategory" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                            ${Object.entries(categories).map(([key, cat]) => 
-                                                `<option value="${key}" ${state.formData.category === key ? 'selected' : ''}>${cat.name}</option>`
-                                            ).join('')}
-                                        </select>
+											<option value="viajes" ${state.formData.category === 'viajes' ? 'selected' : ''}>🟠 Viajes</option>
+											<option value="fujem" ${state.formData.category === 'fujem' ? 'selected' : ''}>🔵 Fujem</option>
+											<option value="fujem" ${state.formData.category === 'fujem' ? 'selected' : ''}>🟢 Comunio</option>
+											<option value="comedia" ${state.formData.category === 'comedia' ? 'selected' : ''}>🟡 Comedia</option>
+											<option value="ocio" ${state.formData.category === 'ocio' ? 'selected' : ''}>🟣 Ocio</option>
+											<option value="cumpleanos" ${state.formData.category === 'cumpleanos' ? 'selected' : ''}>🟤 Cumpleaños</option>
+										</select>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Fecha de inicio *</label>
